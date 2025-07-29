@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Recipe Magic</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">SavourAI</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#how-it-works">How it Works</a></li>
+    </ul>
+  </nav>
+
+  <header class="header" id="home">
+    <h1 class="animated-text">✨ SavourAI ✨</h1>
+    <p class="tagline">"Snap It, Cook It, Love It!"</p>
+  </header>
+  <main class="main-container">
+    <section class="hero-section">
+      <h2>Your Fridge, Your Feast!</h2>
+      <p>Upload a photo of your ingredients or enter them manually:</p>
+    </section>
+    <section class="about-section" id="about">
+      <h2>About SavourAI</h2> <br>
+      <div class="about-content">
+        <div class="about-stats">
+          <h3>Endless Indian Flavors, One Smart App!</h3>
+        </div>
+        <p class="about-headline">Transform Your Kitchen into a Hub of Indian Culinary Magic!</p>
+        <p>SavourAI is a revolutionary AI-powered recipe generator that specializes in Indian cuisine. We're not just another recipe app - we're your personal culinary companion that helps you create magic with whatever ingredients you have on hand!</p>
+        
+        <div class="about-features">
+          <div class="feature-box">
+            <h3>✨ Smart Recipe Generation</h3>
+            <p>Enter your desired ingredients, recipe ideas, or dietary preferences, and our advanced algorithm will instantly craft completely unique Indian recipes just for you. Join thousands of home cooks in transforming the way we plan and prepare meals.</p>
+          </div>
+          
+          <div class="feature-box">
+            <h3>💰 Reduce Waste - Save Money</h3>
+            <p>Did you know? The average family throws away $150/month in wasted food! SavourAI helps you save money by creating intelligent and delicious ways to use up leftover ingredients. Input what you have on hand, and our AI assistant will suggest unique Indian recipes that make the most of your ingredients.</p>
+          </div>
+          
+          <div class="feature-box">
+            <h3>🍲 Personalized Cooking Experience</h3>
+            <ul>
+              <li>Get recipes tailored to your dietary preferences</li>
+              <li>Adjust spice levels to your taste</li>
+              <li>Choose from various cooking time options</li>
+              <li>Filter by calories and nutritional needs</li>
+              <li>Accommodate allergies and restrictions</li>
+            </ul>
+          </div>
+
+          <div class="feature-box">
+            <h3>🏠 Perfect for Modern Living</h3>
+            <p>In today's fast-paced world of nuclear families and busy professionals, finding time to cook traditional Indian meals can be challenging. SavourAI bridges the gap between authentic Indian cooking and modern lifestyles, making it easy for anyone - from beginners to seasoned cooks - to prepare delicious, home-cooked meals. Whether you're a young professional, a busy parent, or someone just starting their culinary journey, we're here to make Indian cooking accessible and enjoyable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="how-it-works" id="how-it-works">
+      <h2>How It Works</h2> <br>
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Upload or Enter Ingredients</h3>
+          <p>Take a photo of your ingredients or simply type them in. Our AI will analyze what you have available.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Set Your Preferences</h3>
+          <p>Choose your meal type, dietary restrictions, spice level, and other preferences to get personalized suggestions.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Get Your Recipes</h3>
+          <p>Receive a curated list of Indian recipes you can make with your ingredients, complete with step-by-step instructions.</p>
+        </div>
+      </div>
+    </section>
+    <section class="upload-section">
+      <form id="uploadForm" class="form-container">
+        <div class="input-group">
+          <label for="imageInput" class="upload-label">Upload Image:</label>
+          <input type="file" id="imageInput" accept="image/*" class="file-input">
+          <div id="imagePreviewContainer" class="image-preview-container hidden">
+            <img id="imagePreview" class="image-preview" src="" alt="Preview">
+            <button type="button" id="removeImage" class="remove-image-btn">×</button>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="ingredients" class="text-label">Or enter ingredients (comma-separated):</label>
+          <input type="text" id="ingredients" placeholder="e.g., tomato, onion, potato" class="text-input">
+        </div>
+        <div class="preferences-group">
+          <div class="preference-item">
+            <label for="mealType" class="text-label">Meal Type:</label>
+            <select id="mealType" class="select-input" required>
+              <option value="" disabled selected>Select meal type</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="snacks">Snacks</option>
+              <option value="dinner">Dinner</option>
+            </select>
+          </div>
+          <div class="preference-item">
+            <label for="servings" class="text-label">Number of Servings:</label>
+            <select id="servings" class="select-input" required>
+              <option value="1">1 Person</option>
+              <option value="2" selected>2 People</option>
+              <option value="3">3 People</option>
+              <option value="4">4 People</option>
+              <option value="5">5 People</option>
+              <option value="6">6 People</option>
+              <option value="7">7 People</option>
+              <option value="8">8 People</option>
+              <option value="9">9 People</option>
+              <option value="10">10 People</option>
+            </select>
+          </div>
+          <div class="preference-item">
+            <label for="dietaryType" class="text-label">Dietary Preference:</label>
+            <select id="dietaryType" class="select-input">
+              <option value="">Any</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="non-vegetarian">Non-vegetarian</option>
+              <option value="gluten-free">Gluten-free</option>
+              <option value="dairy-free">Dairy-free</option>
+            </select>
+          </div>
+          <div class="preference-item">
+            <label for="spiceLevel" class="text-label">Spice Level:</label>
+            <select id="spiceLevel" class="select-input">
+              <option value="mild">Mild</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hot">Hot</option>
+              <option value="extra-hot">Extra Hot</option>
+            </select>
+          </div>
+          <div class="preference-item">
+            <label for="cookingTime" class="text-label">Cooking Time:</label>
+            <select id="cookingTime" class="select-input">
+              <option value="quick">Quick (< 30 mins)</option>
+              <option value="medium">Medium (30-60 mins)</option>
+              <option value="leisure">Leisure (> 60 mins)</option>
+            </select>
+          </div>
+          <div class="preference-item">
+            <label for="calories" class="text-label">Calories per Serving:</label>
+            <select id="calories" class="select-input">
+              <option value="">Any</option>
+              <option value="light">Light (< 300 kcal)</option>
+              <option value="medium">Medium (300-500 kcal)</option>
+              <option value="high">High (> 500 kcal)</option>
+            </select>
+          </div>
+          <div class="preference-item">
+            <label for="allergies" class="text-label">Allergies/Avoid:</label>
+            <input type="text" id="allergies" class="text-input" placeholder="e.g., nuts, shellfish">
+          </div>
+        </div>
+        <button type="submit" class="submit-btn">Find Recipes</button>
+      </form>
+      <div id="progressContainer" class="progress-container hidden">
+        <div class="progress-bar"></div>
+        <p>Processing your ingredients...</p>
+      </div>
+    </section>
+    <section class="results-section hidden" id="resultsSection">
+      <h2>Recipes Made for You:</h2>
+      <div class="recipe-container">
+        <button id="prevRecipe" class="nav-btn prev-btn">❮</button>
+        <div id="recipeList" class="recipe-flashcard"></div>
+        <button id="nextRecipe" class="nav-btn next-btn">❯</button>
+      </div>
+      <div class="recipe-dots" id="recipeDots"></div>
+    </section>
+  </main>
+  <footer class="footer">
+    <ul class="team-list">
+      <li>23BAI1164 C Bhuwan Rajaa</li>
+      <li>23BAI1467 Aayush P Menon</li>
+      <li>23BAI1463 Rohit N</li>
+    </ul>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
